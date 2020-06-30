@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+.table th {
+  position: relative;
+  min-width: 200px;
+}
+.table th span{
+  &.table-order-arrow {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 0 !important;
+    height: 0 !important;
+    transform: translateY(-50%);
+    border-top: 10px solid #000;
+    border-bottom: none;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+  }
+  &.table-order-arrow-active {
+    transform-origin: 50% 25% 0 ;
+    transform: rotate(180deg);
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+.icon {
+  &:hover {
+    cursor: pointer;
+  }
+}
+.edit-task-text, .edit-task-status {
+  position: relative;
+  &:hover {
+    cursor: pointer;
+    .edit-span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: url('../img/edit-solid.svg') no-repeat center;
+    }
+  }
+}
+.edit-span {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 0;
+  height: 0;
+}
+.edited {
+  position: relative;
+  .edited-span {
+    position: absolute;
+    display: block;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    background: url('../img/cog-solid.svg') no-repeat center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+.table td, .table th { 
+  overflow-wrap: anywhere;
+}
