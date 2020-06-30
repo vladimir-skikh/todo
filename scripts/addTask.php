@@ -16,11 +16,12 @@ function addTask($conn) {
     'email' => $email,
     'text' => $text,
   ]);
+  return 'Задача успешно добавлена!';
 }
 
 try {
   $conn = connectDB();
-  addTask($conn);
+  $message = addTask($conn);
   unset($_SESSION['sort']);
   unset($_SESSION['last-sort']);
 }
@@ -31,8 +32,8 @@ catch (Exception $e) {
   ));
 }
 if ($_SESSION['logged_user'] !== NULL) {
-  header('Location: /admin.php');
+  header('Location: /admin.php?added=true');
 }
 else {
-  header('Location: /');
+  header('Location: /?added=true');
 }

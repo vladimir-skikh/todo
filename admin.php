@@ -194,5 +194,15 @@
   <script src="tasksDB.js"></script>
   <script src="adminDB.js"></script>
   <script src="script.js"></script>
+  <?php 
+    if (isset($_GET['added']) && $_GET['added'] === 'true') {
+      echo '<script type="text/javascript">';
+      echo 'alert("Задача успешно добавлена!");';
+      echo 'window.location.href = "/admin.php?page=1&clear=clear"';
+      echo '</script>';
+    }
+  ?>
+  <script>
+  </script>
 </body>
 </html>

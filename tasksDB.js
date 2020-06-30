@@ -112,7 +112,6 @@ var tasksDB = (function($) {
 
 
   function _editTasksSuccess(responce) {
-    //ui.$tasks.html(template({tasks: responce.tasks}));
     console.log('Выполнено!');
   }
   function _editTasksError(responce) {
